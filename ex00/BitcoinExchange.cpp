@@ -67,18 +67,22 @@ void BitcoinExchange::run(const std::string &inputFilename)
         }
 
         double val = atof(valStr.c_str());
-        if(val < 0)
+        if(val == 0)
         {
-            std::cout << "Error: not a positive number\n";
+            std::cout << "Error: not a number.\n";
+        }
+        else if(val < 0)
+        {
+            std::cout << "Error: not a positive number.\n";
         }
         else if(val > 1000)
         {
-            std::cout << "Error: too large number\n";
+            std::cout << "Error: too large a number.\n";
         }
         else
         {
             double rate = getRate(dateStr);
-            std::cout << dateStr << " => " << val << " = " << rate * val << '\n';
+            std::cout << dateStr << " => " << valStr << " = " << rate * val << '\n';
         }
 
     }

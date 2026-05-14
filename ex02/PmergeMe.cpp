@@ -21,15 +21,6 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &other)
 PmergeMe::~PmergeMe()
 {}
 
-static long long getJacobsthal(int n)
-{
-    if (n == 0)
-        return 0;
-    if (n == 1)
-        return 1;
-    return getJacobsthal(n - 1) + 2 * getJacobsthal(n - 2);
-}
-
 // IMPLEMENTARE VECTOR
 std::vector<int> PmergeMe::fordJohnsonVector(std::vector<int> &v)
 {
